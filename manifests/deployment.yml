@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: az204vbaksnginx 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: az204vbaksnginx
+  template:
+    metadata:
+      labels:
+        app: az204vbaksnginx 
+    spec:
+      containers:
+        - name: az204vbaksnginx 
+          image: vibhorconsamreg.azurecr.io/az204vbaksnginx
+          ports:
+          - containerPort: 80
